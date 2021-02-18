@@ -644,6 +644,8 @@ service:
   ## RabbitMQ Manager port
   ## ref: https://github.com/bitnami/bitnami-docker-rabbitmq#environment-variables
   ##
+  managerPortEnabled: true
+
   managerPort: 15672
 
   ## RabbitMQ Manager service port name
@@ -712,6 +714,12 @@ service:
   ##   service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
   ##
   annotations: {}
+  ## Headless Service annotations. Evaluated as a template
+  ## Example:
+  ## annotations:
+  ##   external-dns.alpha.kubernetes.io/internal-hostname: rabbitmq.example.com
+  ##
+  annotationsHeadless: {}
 
 ## Configure the ingress resource that allows you to access the
 ## RabbitMQ installation. Set up the URL
